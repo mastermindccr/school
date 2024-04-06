@@ -1,0 +1,77 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001f49399afb0 .scope module, "t_Lab3_SbRb_Latch_gatelevel" "t_Lab3_SbRb_Latch_gatelevel" 2 1;
+ .timescale 0 0;
+v000001f4937e2720_0 .net "Q", 0 0, L_000001f4937e3270;  1 drivers
+v000001f4937e27c0_0 .net "Qb", 0 0, L_000001f493999b20;  1 drivers
+v000001f4937e2860_0 .var "Rb", 0 0;
+v000001f4937e2900_0 .var "Sb", 0 0;
+S_000001f49399b140 .scope module, "M1" "Lab3_SbRb_Latch_gatelevel" 2 5, 3 1 0, S_000001f49399afb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "Sb";
+    .port_info 1 /INPUT 1 "Rb";
+    .port_info 2 /OUTPUT 1 "Q";
+    .port_info 3 /OUTPUT 1 "Qb";
+L_000001f493999b20/d .functor NAND 1, L_000001f4937e3270, v000001f4937e2860_0, C4<1>, C4<1>;
+L_000001f493999b20 .delay 1 (5,5,5) L_000001f493999b20/d;
+L_000001f4937e3270/d .functor NAND 1, L_000001f493999b20, v000001f4937e2900_0, C4<1>, C4<1>;
+L_000001f4937e3270 .delay 1 (5,5,5) L_000001f4937e3270/d;
+v000001f4937e2ed0_0 .net "Q", 0 0, L_000001f4937e3270;  alias, 1 drivers
+v000001f4937e2d30_0 .net "Qb", 0 0, L_000001f493999b20;  alias, 1 drivers
+v000001f49399d850_0 .net "Rb", 0 0, v000001f4937e2860_0;  1 drivers
+v000001f493999a80_0 .net "Sb", 0 0, v000001f4937e2900_0;  1 drivers
+    .scope S_000001f49399afb0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f4937e2900_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f4937e2860_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f4937e2900_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f4937e2860_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f4937e2860_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f4937e2900_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f4937e2860_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f4937e2900_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f4937e2860_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f4937e2900_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_000001f49399afb0;
+T_1 ;
+    %delay 210, 0;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_000001f49399afb0;
+T_2 ;
+    %vpi_call 2 19 "$dumpfile", "t_Lab3_SbRb_Latch_gatelevel" {0 0 0};
+    %vpi_call 2 20 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "t_Lab3_SbRb_Latch_gatelevel.v";
+    "Lab3_SbRb_Latch_gatelevel.v";

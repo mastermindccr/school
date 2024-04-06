@@ -1,0 +1,9 @@
+player(20,5,0) + (5,3,2)
+
+(health,attack,defense,exp,gold)
+
+monster average(5,3,3,9,3) + (6,3,2,1,2)
+
+monster attacker(6,5,2,8,3) + (4,4,1,1,2)
+
+monster tank(8,2,3,10,5) + (8,3,4,1,3)

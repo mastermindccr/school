@@ -1,0 +1,66 @@
+$date
+	Mon Apr 26 00:54:34 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module t_Simple_Circuit $end
+$var wire 1 ! E2 $end
+$var wire 1 " E1 $end
+$var wire 1 # D2 $end
+$var wire 1 $ D1 $end
+$var reg 1 % A $end
+$var reg 1 & B $end
+$var reg 1 ' C $end
+$scope module M1 $end
+$var wire 1 % A $end
+$var wire 1 & B $end
+$var wire 1 ' C $end
+$var wire 1 $ D $end
+$var wire 1 " E $end
+$var wire 1 ( w1 $end
+$upscope $end
+$scope module M2 $end
+$var wire 1 % A $end
+$var wire 1 & B $end
+$var wire 1 ' C $end
+$var wire 1 # D $end
+$var wire 1 ! E $end
+$var wire 1 ) w1 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x)
+0(
+0'
+0&
+0%
+1$
+x#
+1"
+x!
+$end
+#10
+1!
+#30
+1#
+0)
+#100
+0"
+1(
+1'
+1&
+1%
+#110
+0!
+#130
+0#
+1)
+#150
+1#
+#200

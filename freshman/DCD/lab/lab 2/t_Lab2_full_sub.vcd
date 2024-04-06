@@ -1,0 +1,117 @@
+$date
+	Mon May 10 22:02:08 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module t_Lab2_full_sub $end
+$var wire 1 ! D $end
+$var wire 1 " B $end
+$var reg 1 # x $end
+$var reg 1 $ y $end
+$var reg 1 % z $end
+$scope module M1 $end
+$var wire 1 " B $end
+$var wire 1 # x $end
+$var wire 1 $ y $end
+$var wire 1 % z $end
+$var wire 1 & D1 $end
+$var wire 1 ! D $end
+$var wire 1 ' B2 $end
+$var wire 1 ( B1 $end
+$scope module M0 $end
+$var wire 1 ( B $end
+$var wire 1 & D $end
+$var wire 1 ) w1 $end
+$var wire 1 # x $end
+$var wire 1 $ y $end
+$upscope $end
+$scope module M1 $end
+$var wire 1 ' B $end
+$var wire 1 ! D $end
+$var wire 1 * w1 $end
+$var wire 1 & x $end
+$var wire 1 % y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x*
+1)
+x(
+x'
+x&
+0%
+0$
+0#
+x"
+x!
+$end
+#2
+0'
+0(
+#4
+1*
+0"
+0&
+#8
+0!
+#50
+1%
+#52
+1'
+#54
+1"
+1!
+#100
+0%
+1$
+#102
+0'
+1(
+#104
+0*
+0!
+1&
+#108
+1!
+#150
+1%
+#154
+0!
+#200
+0)
+0%
+0$
+1#
+#202
+0(
+#204
+0"
+1!
+#250
+1%
+#254
+0!
+#300
+0%
+1$
+#304
+1*
+1!
+0&
+#308
+0!
+#350
+1%
+#352
+1'
+#354
+1"
+1!
+#400

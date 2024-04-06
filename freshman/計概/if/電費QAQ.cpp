@@ -1,0 +1,49 @@
+#include<stdio.h>
+
+int main()
+{
+	int a;
+	float sum = 0;
+	scanf("%d",&a);
+	if(a<120)
+	{
+		sum+=1.63*a;
+	}
+	else
+	{
+		sum+=120*1.63;
+		if(a<330)
+		{
+			sum+=(a-120)*2.38;
+		}
+		else
+		{
+			sum+=210*2.38;
+			if(a<500)
+			{
+				sum+=(a-330)*3.52;
+			}
+			else
+			{
+				sum+=170*3.52;
+				if(a<700)
+				{
+					sum+=(a-500)*4.80;
+				}
+				else
+				{
+					sum+=200*4.80;
+					if(a<1000)
+					{
+						sum+=(a-700)*5.66;
+					}
+					else
+					{
+						sum+=300*5.66+(a-1000)*6.41;
+					}
+				}
+			}
+		}
+	}
+	printf("%.0f",sum);
+}

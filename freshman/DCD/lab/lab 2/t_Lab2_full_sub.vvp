@@ -1,0 +1,123 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000022ec4757af0 .scope module, "t_Lab2_full_sub" "t_Lab2_full_sub" 2 1;
+ .timescale 0 0;
+v0000022ec47b13a0_0 .net "B", 0 0, L_0000022ec4763f20;  1 drivers
+v0000022ec47b1e40_0 .net "D", 0 0, L_0000022ec4763900;  1 drivers
+v0000022ec47b1ee0_0 .var "x", 0 0;
+v0000022ec47b11c0_0 .var "y", 0 0;
+v0000022ec47b1300_0 .var "z", 0 0;
+S_0000022ec4768a80 .scope module, "M1" "Lab2_full_sub" 2 5, 3 1 0, S_0000022ec4757af0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /INPUT 1 "z";
+    .port_info 3 /OUTPUT 1 "B";
+    .port_info 4 /OUTPUT 1 "D";
+L_0000022ec4763f20/d .functor OR 1, L_0000022ec4763970, L_0000022ec4763dd0, C4<0>, C4<0>;
+L_0000022ec4763f20 .delay 1 (2,2,2) L_0000022ec4763f20/d;
+v0000022ec47b18a0_0 .net "B", 0 0, L_0000022ec4763f20;  alias, 1 drivers
+v0000022ec47b1620_0 .net "B1", 0 0, L_0000022ec4763970;  1 drivers
+v0000022ec47b14e0_0 .net "B2", 0 0, L_0000022ec4763dd0;  1 drivers
+v0000022ec47b1800_0 .net "D", 0 0, L_0000022ec4763900;  alias, 1 drivers
+v0000022ec47b19e0_0 .net "D1", 0 0, L_0000022ec4755a60;  1 drivers
+v0000022ec47b1da0_0 .net "x", 0 0, v0000022ec47b1ee0_0;  1 drivers
+v0000022ec47b1260_0 .net "y", 0 0, v0000022ec47b11c0_0;  1 drivers
+v0000022ec47b1b20_0 .net "z", 0 0, v0000022ec47b1300_0;  1 drivers
+S_0000022ec4768c10 .scope module, "M0" "Lab2_half_sub_gatelevel" 3 3, 4 1 0, S_0000022ec4768a80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "B";
+    .port_info 3 /OUTPUT 1 "D";
+L_0000022ec4755a60/d .functor XOR 1, v0000022ec47b1ee0_0, v0000022ec47b11c0_0, C4<0>, C4<0>;
+L_0000022ec4755a60 .delay 1 (4,4,4) L_0000022ec4755a60/d;
+L_0000022ec4763890 .functor NOT 1, v0000022ec47b1ee0_0, C4<0>, C4<0>, C4<0>;
+L_0000022ec4763970/d .functor AND 1, L_0000022ec4763890, v0000022ec47b11c0_0, C4<1>, C4<1>;
+L_0000022ec4763970 .delay 1 (2,2,2) L_0000022ec4763970/d;
+v0000022ec4732ef0_0 .net "B", 0 0, L_0000022ec4763970;  alias, 1 drivers
+v0000022ec4733290_0 .net "D", 0 0, L_0000022ec4755a60;  alias, 1 drivers
+v0000022ec4732d50_0 .net "w1", 0 0, L_0000022ec4763890;  1 drivers
+v0000022ec471e7c0_0 .net "x", 0 0, v0000022ec47b1ee0_0;  alias, 1 drivers
+v0000022ec4757c80_0 .net "y", 0 0, v0000022ec47b11c0_0;  alias, 1 drivers
+S_0000022ec4768da0 .scope module, "M1" "Lab2_half_sub_gatelevel" 3 4, 4 1 0, S_0000022ec4768a80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "B";
+    .port_info 3 /OUTPUT 1 "D";
+L_0000022ec4763900/d .functor XOR 1, L_0000022ec4755a60, v0000022ec47b1300_0, C4<0>, C4<0>;
+L_0000022ec4763900 .delay 1 (4,4,4) L_0000022ec4763900/d;
+L_0000022ec4763c10 .functor NOT 1, L_0000022ec4755a60, C4<0>, C4<0>, C4<0>;
+L_0000022ec4763dd0/d .functor AND 1, L_0000022ec4763c10, v0000022ec47b1300_0, C4<1>, C4<1>;
+L_0000022ec4763dd0 .delay 1 (2,2,2) L_0000022ec4763dd0/d;
+v0000022ec47559c0_0 .net "B", 0 0, L_0000022ec4763dd0;  alias, 1 drivers
+v0000022ec4732720_0 .net "D", 0 0, L_0000022ec4763900;  alias, 1 drivers
+v0000022ec47327c0_0 .net "w1", 0 0, L_0000022ec4763c10;  1 drivers
+v0000022ec4732860_0 .net "x", 0 0, L_0000022ec4755a60;  alias, 1 drivers
+v0000022ec4732900_0 .net "y", 0 0, v0000022ec47b1300_0;  alias, 1 drivers
+    .scope S_0000022ec4757af0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022ec47b1ee0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022ec47b11c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022ec47b11c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022ec47b1ee0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022ec47b11c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022ec47b11c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022ec47b1300_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0000022ec4757af0;
+T_1 ;
+    %delay 400, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0000022ec4757af0;
+T_2 ;
+    %vpi_call 2 20 "$dumpfile", "t_Lab2_full_sub.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "t_Lab2_full_sub.v";
+    "Lab2_full_sub.v";
+    "Lab2_half_sub_gatelevel.v";

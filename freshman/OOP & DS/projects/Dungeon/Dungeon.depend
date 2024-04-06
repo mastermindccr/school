@@ -1,0 +1,342 @@
+# depslib dependency file v1.0
+1619236563 source:c:\users\borac\desktop\dungeon project\project\dungeon\main.cpp
+	<iostream>
+	"Dungeon.h"
+
+1619269306 source:c:\users\borac\desktop\dungeon project\project\dungeon\object.cpp
+	"Object.h"
+
+1619269277 c:\users\borac\desktop\dungeon project\project\dungeon\object.h
+	<string>
+
+1619280379 source:c:\users\borac\desktop\dungeon project\project\dungeon\item.cpp
+	"Item.h"
+
+1619879825 c:\users\borac\desktop\dungeon project\project\dungeon\item.h
+	"Player.h"
+	"Object.h"
+	<string>
+
+1619269144 source:c:\users\borac\desktop\dungeon project\project\dungeon\character.cpp
+	"Character.h"
+
+1619269145 c:\users\borac\desktop\dungeon project\project\dungeon\character.h
+	"Object.h"
+	<iostream>
+	<string>
+	<vector>
+
+1619893297 source:c:\users\borac\desktop\dungeon project\project\dungeon\room.cpp
+	"Room.h"
+
+1619695449 c:\users\borac\desktop\dungeon project\project\dungeon\room.h
+	<vector>
+	"object.h"
+
+1620065978 source:c:\users\borac\desktop\dungeon project\project\dungeon\monster.cpp
+	"Monster.h"
+	<windows.h>
+
+1619447852 c:\users\borac\desktop\dungeon project\project\dungeon\monster.h
+	"Character.h"
+	"Player.h"
+	<string>
+
+1620031613 source:c:\users\borac\desktop\dungeon project\project\dungeon\player.cpp
+	"Player.h"
+
+1619933850 c:\users\borac\desktop\dungeon project\project\dungeon\player.h
+	"Character.h"
+	"Room.h"
+	"Item.h"
+	"exp.h"
+	<string>
+	<vector>
+
+1620068158 source:c:\users\borac\desktop\dungeon project\project\dungeon\npc.cpp
+	"NPC.h"
+
+1619237318 c:\users\borac\desktop\dungeon project\project\dungeon\npc.h
+	<iostream>
+	<string>
+	<vector>
+	"Player.h"
+	"Character.h"
+	"Item.h"
+
+1619243443 source:c:\users\borac\desktop\dungeon project\project\dungeon\armor.cpp
+	"Armor.h"
+
+1619243458 c:\users\borac\desktop\dungeon project\project\dungeon\armor.h
+	<string>
+
+1619243458 c:\users\borac\desktop\dungeon project\project\dungeon\weapon.h
+	<string>
+
+1619243458 source:c:\users\borac\desktop\dungeon project\project\dungeon\weapon.cpp
+	"Weapon.h"
+
+1619014450 c:\users\borac\desktop\dungeon project\project\dungeon\exp.h
+
+1619020887 source:c:\users\borac\desktop\dungeon project\project\dungeon\exp.cpp
+	"exp.h"
+	<math.h>
+
+1619440462 source:c:\users\borac\desktop\dungeon project\project\dungeon\dungeon.cpp
+	"Dungeon.h"
+	<cmath>
+	<cstdlib>
+	<ctime>
+	<windows.h>
+	<mmsystem.h>
+
+1619897835 c:\users\borac\desktop\dungeon project\project\dungeon\dungeon.h
+	<iostream>
+	<string>
+	<vector>
+	<exception>
+	"Player.h"
+	"Monster.h"
+	"NPC.h"
+	"Room.h"
+	"Record.h"
+
+1619902939 c:\users\borac\desktop\dungeon project\project\dungeon\record.h
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1619243443 source:c:\users\borac\desktop\dungeon\armor.cpp
+	"Armor.h"
+
+1619243458 c:\users\borac\desktop\dungeon\armor.h
+	<string>
+
+1619879825 c:\users\borac\desktop\dungeon\item.h
+	"Player.h"
+	"Object.h"
+	<string>
+
+1619933850 c:\users\borac\desktop\dungeon\player.h
+	"Character.h"
+	"Room.h"
+	"Item.h"
+	"exp.h"
+	<string>
+	<vector>
+
+1619269145 c:\users\borac\desktop\dungeon\character.h
+	"Object.h"
+	<iostream>
+	<string>
+	<vector>
+
+1619269277 c:\users\borac\desktop\dungeon\object.h
+	<string>
+
+1619695449 c:\users\borac\desktop\dungeon\room.h
+	<vector>
+	"object.h"
+
+1619243458 c:\users\borac\desktop\dungeon\weapon.h
+	<string>
+
+1619014450 c:\users\borac\desktop\dungeon\exp.h
+
+1619269144 source:c:\users\borac\desktop\dungeon\character.cpp
+	"Character.h"
+
+1620067265 source:c:\users\borac\desktop\dungeon\dungeon.cpp
+	"Dungeon.h"
+	<cmath>
+	<cstdlib>
+	<ctime>
+	<iomanip>
+	<windows.h>
+	<mmsystem.h>
+
+1619897835 c:\users\borac\desktop\dungeon\dungeon.h
+	<iostream>
+	<string>
+	<vector>
+	<exception>
+	"Player.h"
+	"Monster.h"
+	"NPC.h"
+	"Room.h"
+	"Record.h"
+
+1619447852 c:\users\borac\desktop\dungeon\monster.h
+	"Character.h"
+	"Player.h"
+	<string>
+
+1619237318 c:\users\borac\desktop\dungeon\npc.h
+	<iostream>
+	<string>
+	<vector>
+	"Player.h"
+	"Character.h"
+	"Item.h"
+
+1619902939 c:\users\borac\desktop\dungeon\record.h
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1619020887 source:c:\users\borac\desktop\dungeon\exp.cpp
+	"exp.h"
+	<math.h>
+
+1619236563 source:c:\users\borac\desktop\dungeon\main.cpp
+	<iostream>
+	"Dungeon.h"
+
+1620065978 source:c:\users\borac\desktop\dungeon\monster.cpp
+	"Monster.h"
+	<windows.h>
+
+1619269306 source:c:\users\borac\desktop\dungeon\object.cpp
+	"Object.h"
+
+1619893297 source:c:\users\borac\desktop\dungeon\room.cpp
+	"Room.h"
+
+1620029603 source:c:\users\borac\desktop\dungeon\npc.cpp
+	"NPC.h"
+
+1619243458 source:c:\users\borac\desktop\dungeon\weapon.cpp
+	"Weapon.h"
+
+1620031613 source:c:\users\borac\desktop\dungeon\player.cpp
+	"Player.h"
+
+1619280379 source:c:\users\borac\desktop\dungeon\item.cpp
+	"Item.h"
+
+1620067722 source:c:\users\borac\desktop\dungeon\record.cpp
+	"Record.h"
+	<iomanip>
+	<windows.h>
+
+1620067722 source:c:\users\borac\desktop\dungeon project\project\dungeon\record.cpp
+	"Record.h"
+	<iomanip>
+	<windows.h>
+
+1619269144 source:c:\users\borac\desktop\school\oop\projects\dungeon\character.cpp
+	"Character.h"
+
+1619269145 c:\users\borac\desktop\school\oop\projects\dungeon\character.h
+	"Object.h"
+	<iostream>
+	<string>
+	<vector>
+
+1619269277 c:\users\borac\desktop\school\oop\projects\dungeon\object.h
+	<string>
+
+1619020887 source:c:\users\borac\desktop\school\oop\projects\dungeon\exp.cpp
+	"exp.h"
+	<math.h>
+
+1619014450 c:\users\borac\desktop\school\oop\projects\dungeon\exp.h
+
+1619280379 source:c:\users\borac\desktop\school\oop\projects\dungeon\item.cpp
+	"Item.h"
+
+1619879825 c:\users\borac\desktop\school\oop\projects\dungeon\item.h
+	"Player.h"
+	"Object.h"
+	<string>
+
+1619933850 c:\users\borac\desktop\school\oop\projects\dungeon\player.h
+	"Character.h"
+	"Room.h"
+	"Item.h"
+	"exp.h"
+	<string>
+	<vector>
+
+1619695449 c:\users\borac\desktop\school\oop\projects\dungeon\room.h
+	<vector>
+	"object.h"
+
+1619236563 source:c:\users\borac\desktop\school\oop\projects\dungeon\main.cpp
+	<iostream>
+	"Dungeon.h"
+
+1620125775 c:\users\borac\desktop\school\oop\projects\dungeon\dungeon.h
+	<iostream>
+	<string>
+	<vector>
+	<exception>
+	"Player.h"
+	"Monster.h"
+	"NPC.h"
+	"Room.h"
+	"Record.h"
+
+1619447852 c:\users\borac\desktop\school\oop\projects\dungeon\monster.h
+	"Character.h"
+	"Player.h"
+	<string>
+
+1619237318 c:\users\borac\desktop\school\oop\projects\dungeon\npc.h
+	<iostream>
+	<string>
+	<vector>
+	"Player.h"
+	"Character.h"
+	"Item.h"
+
+1619902939 c:\users\borac\desktop\school\oop\projects\dungeon\record.h
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+	"Item.h"
+	"Monster.h"
+	"NPC.h"
+	"Player.h"
+
+1620065978 source:c:\users\borac\desktop\school\oop\projects\dungeon\monster.cpp
+	"Monster.h"
+	<windows.h>
+
+1620068158 source:c:\users\borac\desktop\school\oop\projects\dungeon\npc.cpp
+	"NPC.h"
+
+1619269306 source:c:\users\borac\desktop\school\oop\projects\dungeon\object.cpp
+	"Object.h"
+
+1620031613 source:c:\users\borac\desktop\school\oop\projects\dungeon\player.cpp
+	"Player.h"
+
+1620462794 source:c:\users\borac\desktop\school\oop\projects\dungeon\record.cpp
+	"Record.h"
+	<iomanip>
+	<windows.h>
+
+1619893297 source:c:\users\borac\desktop\school\oop\projects\dungeon\room.cpp
+	"Room.h"
+
+1620462280 source:c:\users\borac\desktop\school\oop\projects\dungeon\dungeon.cpp
+	"Dungeon.h"
+	<cmath>
+	<cstdlib>
+	<ctime>
+	<iomanip>
+	<windows.h>
+	<mmsystem.h>
+
