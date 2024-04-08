@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+path=$1
+strings $path | grep -e ^RkxBR3 | base64 -d
+echo ""

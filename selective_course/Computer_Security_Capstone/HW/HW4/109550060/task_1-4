@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+
+# find zip pattern and put the zipped word in a file
+pos=$(grep -obUaP "\x50\x4b\x03\x04" $1 | awk -F ':' '{print $1}')
+tail -c +$(($pos+1)) $1 >> tmp
+
+# unzip the file
+unzip tmp
+rm tmp
+
+# find the flag
+cat flag.txt | grep -oP FLAG{.*}
+
+rm flag.txt

