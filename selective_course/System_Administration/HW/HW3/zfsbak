@@ -1,0 +1,131 @@
+#!/bin/sh
+
+msg(){
+	echo "Usage:" > output.log
+	echo "- create: zfsbak DATASET [ROTATION_CNT]" > output.log
+	echo "- list: zfsbak -l|--list [DATASET|ID|DATASET ID]" > output.log
+	echo "- delete: zfsbak -d|--delete [DATASET|ID|DATASET ID...]" > output.log
+	echo "- export: zfsbak -e|--export DATASET [ID]" > output.log
+	echo "- import: zfsbak -i|--import FILENAME DATASET" > output.log
+	exit 1
+}
+
+if [ $# -eq 0 ]; then
+	msg
+fi
+
+rotation=12
+dataset=""
+id=-1
+lflag=false
+dflag=false
+eflag=false
+iflag=false
+while getopts ':lde:i:' OPT; do
+	case $OPT in
+		l) 
+			echo "ID DATASET TIME"
+			lflag=true
+			if [ $# -eq 3 ]; then
+				dataset=$2
+				id=$3
+				filename=`zfs list -H -s creation -t snapshot $dataset | head -n +$id | tail -1 | cut -f 1`
+				ds=`echo $filename | awk -F'@' '{print $1}'`
+				tm=`echo $filename | awk -F'@' '{print $2}'`
+				echo "$id $ds $tm"
+			elif [ $# -eq 2 ]; then
+				re='^[0-9]+$'
+				if [ -n "$2" ] && [ "$2" -eq "$2" ] 2>/dev/null; then # it is a number
+					id=$2
+					filename=`zfs list -H -s creation -t snapshot mypool/public mypool/upload mypool/hidden | head -n +$id | tail -1 | cut -f 1`
+					ds=`echo $filename | awk -F'@' '{print $1}'`
+					tm=`echo $filename | awk -F'@' '{print $2}'`
+					echo "$id $ds $tm"
+					
+				else
+					dataset=$2
+					filename=`zfs list -H -s creation -t snapshot $dataset`
+					filename=`echo "$filename" | awk '{printf $1" "}'`
+					i=0
+					for file in $filename; do
+						i=$(($i+1))
+						ds=`echo $file | awk -F'@' '{print $1}'`
+						tm=`echo $file | awk -F'@' '{print $2}'`
+						echo "$i $ds $tm"
+					done
+				fi
+			elif [ $# -eq 1 ]; then
+				filename=`zfs list -s creation -H -t snapshot mypool/public mypool/upload mypool/hidden`
+				filename=`echo "$filename" | awk '{printf $1" "}'`
+				i=0
+				for file in $filename; do
+					i=$(($i+1))
+					ds=`echo $file | awk -F'@' '{print $1}'`
+					tm=`echo $file | awk -F'@' '{print $2}'`
+					echo "$i $ds $tm"
+				done
+			else
+				msg
+			fi
+			;;
+		d) 
+			dflag=true
+			if [ $# -ge 3 ]; then
+				dataset=$2
+				args=$@
+				len=$#
+				ids=`echo "$args" | cut -d " " -f 3-"$len"`
+				for id in $ids; do
+					delfile=`zfs list -H -s creation -t snapshot $dataset | head -n +$id | tail -1 | cut -f 1`
+					zfs destroy "$delfile"
+					echo "Destroy $delfile"
+				done
+			elif [ $# -eq 2 ]; then
+				re='^[0-9]+$'
+				if [ -n "$2" ] && [ "$2" -eq "$2" ] 2>/dev/null; then # it is a number
+					id=$2
+					filename=`zfs list -H -s creation -t snapshot mypool/public mypool/upload mypool/hidden | head -n +$id | tail -1 | cut -f 1`
+					zfs destroy "$filename"
+					echo "Destroy $filename"
+
+				else
+					dataset=$2
+					filename=`zfs list -s creation -H -t snapshot $dataset`
+					filename=`echo "$filename" | awk '{printf $1" "}'`
+					i=0
+					for file in $filename; do
+						zfs destroy "$file"
+						echo "Destroy $file"
+					done
+				fi
+			else
+				filename=`zfs list -s creation -H -t snapshot mypool/public mypool/upload mypool/hidden`
+				filename=`echo "$filename" | awk '{printf $1" "}'`
+				i=0
+				for file in $filename; do
+					zfs destroy "$file"
+					echo "Destroy $file"
+				done
+			fi
+			;;
+		e) eflag=true;;
+		i) iflag=true;;
+		*) msg;;
+	esac
+done
+
+if [ "$lflag" = false ] && [ "$dflag" = false ] && [ "$eflag" = false ] && [ "$iflag" = false ]; then
+	dataset=$1
+	if [ $# -eq 2 ]; then
+		rotation=$2
+	fi
+	filename="$dataset"@`date +"%F-%T"`
+	zfs snapshot "$filename"
+	echo "Snap $filename"
+	filenum=`zfs list -s creation -H -t snapshot $dataset | wc -l | awk '{$1=$1;print}'`
+	while [ $filenum -gt $rotation ]; do
+		delfile=`zfs list -s creation -H -t snapshot $dataset | head -1 | cut -f 1`
+		zfs destroy "$delfile"
+		filenum=$(($filenum-1))
+	done
+fi
