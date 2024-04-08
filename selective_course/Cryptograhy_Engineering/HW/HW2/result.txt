@@ -1,0 +1,24 @@
+--------------------------------------------
+Cracking easy hash...
+Hash: ef0ebbb77298e1fbd81f756a4efc35b977c93dae
+Password: orange
+Took 124 attempts to crack input hash. Time Taken: 0:00:00.081462
+--------------------------------------------
+--------------------------------------------
+Cracking medium hash...
+Hash: 0bc2f4f2e1f8944866c2e952a5b59acabd1cebf2
+Password: starfish
+Took 2681 attempts to crack input hash. Time Taken: 0:00:00.071932
+--------------------------------------------
+--------------------------------------------
+Cracking leet-hacker hash...
+Hash: 9d6b628c1f81b4795c0266c0f12123c1e09a7ad3
+Password: puppy
+Took 5638 attempts to crack input hash. Time Taken: 0:00:00.004354
+--------------------------------------------
+--------------------------------------------
+Cracking extra-credit hash...
+Hash: 44ac8049dd677cb5bc0ee2aac622a0f42838b34d
+Password: z745100 wujuchawiapra53
+Took 230983159156 attempts to crack input hash. Time Taken: 14:03:36.706914
+--------------------------------------------
