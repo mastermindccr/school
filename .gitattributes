@@ -1,0 +1,2 @@
+selective_course/AI_Capstone/**/*.exe filter=lfs diff=lfs merge=lfs -text
+selective_course/AI_Capstone/**/*.pkl filter=lfs diff=lfs merge=lfs -text
