@@ -1,0 +1,8 @@
+select sum("Confirmed")
+from (select *
+	  from "March22"
+	  union
+	  select *
+	  from "March23"
+	 ) as tmp
+where ("Province_State" = 'Kansas' and Date("Last_Update") = '2022-03-24')

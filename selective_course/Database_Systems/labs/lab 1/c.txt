@@ -1,0 +1,11 @@
+select sec."Country_Region" as "Country_Region", sec.sum-fir.sum as "New_Case"
+from ((select "Country_Region", "Last_Update", sum("Confirmed")
+	  from "March22"
+	  group by "Country_Region", "Last_Update") as fir
+	  inner join
+	  (select "Country_Region", "Last_Update", sum("Confirmed")
+	  from "March23"
+	  group by "Country_Region", "Last_Update") as sec
+	  on fir."Country_Region" = sec."Country_Region"
+	  )
+where sec.sum-fir.sum > 100000 and Date(sec."Last_Update") = '2022-03-24' and Date(fir."Last_Update") = '2022-03-23'
